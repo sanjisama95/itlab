@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <title>User</title>
+    <script>
+        function deleteCookie() {
+            document.cookie = "USER_INFO=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        }
+    </script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h3 class="text-info">Thông tin người dùng</h3>
+        <p class="font-weight-bold">ID: <span th:text="${userInfo.getId()}" class="text-success"></span></p>
+        <p class="font-weight-bold">Name: <span th:text="${userInfo.getName()}" class="text-success"></span></p>
+        <p class="font-weight-bold">Email: <span th:text="${userInfo.getEmail()}" class="text-success"></span></p>
+        <form action="/login" method="get">
+            <input type="submit" value="Logout" onclick="deleteCookie()" class="btn btn-warning">
+        </form>
+    </div>
+</body>
+</html>

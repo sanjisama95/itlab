@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Login</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h3 th:text="${notLogin}" class="text-warning"></h3>
+        <h3 th:text="${errorUser}" class="text-danger"></h3>
+        <form action="/j_login" method="post" id="login">
+            <div class="form-group">
+                <label for="">Username</label>
+                <input type="text" class="form-control" name="username">
+            </div>
+            <div class="form-group">
+                <label for="">Password</label>
+                <input type="password" class="form-control" name="password">
+            </div>
+            <input type="submit" value="Login" class="btn btn-primary">
+        </form>
+
+    </div>
+
+</body>
+</html>
